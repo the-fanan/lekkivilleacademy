@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->text('description')->nullable();//for tutors
             $table->string('operating_regions')->nullable();
             $table->string('password');
-            $table->enum('status',['enabled','disabled']);
+            $table->enum('status',['enabled','disabled'])->default('enabled');
             $table->rememberToken();
             $table->timestamps();
         });

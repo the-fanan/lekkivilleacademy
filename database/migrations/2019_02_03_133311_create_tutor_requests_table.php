@@ -21,6 +21,7 @@ class CreateTutorRequestsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
             $table->integer('tutor_id')->unsigned()->nullable();
+            $table->enum('tutorial_type',['home','online']);
             $table->enum('status', ['pending','approved','disapproved'])->default('pending');
             $table->integer('package_id')->unsigned();
             $table->enum('extension_type',['day', 'week', 'month', 'year'])->nullable();

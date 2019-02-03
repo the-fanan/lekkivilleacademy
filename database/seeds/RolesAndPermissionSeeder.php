@@ -13,25 +13,26 @@ class RolesAndPermissionSeeder extends Seeder
      */
     public function run()
     {
-        //
-         // Reset cached roles and permissions
-         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+        
+        // Reset cached roles and permissions
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
-       /*  // create permissions
-         Permission::create(['name' => 'edit articles']);
-         Permission::create(['name' => 'delete articles']);
-         Permission::create(['name' => 'publish articles']);
-         Permission::create(['name' => 'unpublish articles']);
+        // create permissions
+        Permission::create(['name' => 'approve-tutor']);
+        Permission::create(['name' => 'delete-tutor']);
+        Permission::create(['name' => 'view-all-subscriptions']);
+        Permission::create(['name' => 'edit-tutor']);
  
-         // create roles and assign created permissions
+        // create roles
+        $Admin = Role::create(['name' => 'admin']);
+        $Tutor = Role::create(['name' => 'tutor']);
+        $Client = Role::create(['name' => 'client']);
+
+        //assign permissions
+        $Admin->givePermissionTo('approve-tutor');
+        $Admin->givePermissionTo('delete-tutor');
+        $Admin->givePermissionTo('view-all-subscriptions');
+        $Admin->givePermissionTo('edit-tutor');
  
-         // this can be done as separate statements
-         $role = Role::create(['name' => 'writer']);
-         $role->givePermissionTo('edit articles');
- 
-         // or may be done by chaining
-         $role = Role::create(['name' => 'moderator'])
-             ->givePermissionTo(['publish articles', 'unpublish articles']);
-*/ 
     }
 }

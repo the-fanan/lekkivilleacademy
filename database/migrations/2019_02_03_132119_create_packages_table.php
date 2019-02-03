@@ -18,8 +18,7 @@ class CreatePackagesTable extends Migration
             $table->string('name');
             $table->double('amount')->unsigned();
             $table->string('default_currency_code')->default('NGN');
-            $table->enum('type',['private','online']);
-            $table->enum('group', ['nursery and primary', 'secondary, high-school and post-secondary', 'foreign exams', 'english grammer, literature and writing']);
+            $table->enum('group', ['nursery and primary', 'secondary, high-school and post-secondary', 'foreign exams', 'english grammar, literature and writing']);
             $table->enum('duration_type',['day', 'week', 'month', 'year']);
             $table->integer('duration_amount')->unsigned();
             $table->timestamps();
