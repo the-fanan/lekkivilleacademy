@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->date('dob')->nullable();
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
+            $table->text('description')->nullable();//for tutors
             $table->string('operating_regions')->nullable();
             $table->string('password');
             $table->enum('status',['enabled','disabled']);
