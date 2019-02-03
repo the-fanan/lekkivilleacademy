@@ -10,10 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => 'optimizeHtml'], function(){
+    Route::get('/', function () {
+        return view('welcome');
+    })->name('welcome');
 
-Route::get('/', function () {
-    return view('welcome');
+    Route::get('select-tutor', 'TutorController@showTutors')->name('get-tutor');
+
+    Route::get('become-tutor', 'TutorController@showTutors')->name('become-tutor');
 });
+
 
 Auth::routes();
 

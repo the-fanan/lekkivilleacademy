@@ -6,7 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-	<title>{{ config('app.name', 'Lekki Ville Academy') }}</title>
+	<title>{{ config('app.name', 'Lekki Ville Academy') }} - @yield('title')</title>
+	<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -54,11 +55,11 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12 text-right">
-							<p class="num">Call: +01 123 456 7890</p>
+							<p class="num">+2348063127827,+2348181627799</p>
 							<ul class="fh5co-social">
 								<li><a href="#"><i class="icon-twitter"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble"></i></a></li>
-								<li><a href="#"><i class="icon-github"></i></a></li>
+								<li><a href="#"><i class="icon-facebook"></i></a></li>
+								<li><a href="#"><i class="icon-instagram"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -68,14 +69,14 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-1">
-							<div id="fh5co-logo"><a href="index.html">Learn<span>.</span></a></div>
+							<div id="fh5co-logo"><a href="{{ route('welcome') }}">LVA<span>.</span></a></div>
 						</div>
 						<div class="col-xs-11 text-right menu-1">
 							<ul>
-								<li class="active"><a href="index.html">Home</a></li>
-								<li><a href="courses.html">Courses</a></li>
-								<li><a href="pricing.html">Pricing</a></li>
-								<li class="has-dropdown">
+								<li class="active"><a href="{{ route('welcome') }}">Home</a></li>
+								<li><a href="{{ route('get-tutor') }}">Tutors</a></li>
+								<li><a class="page-scroll" href="#fh5co-project">Pricing</a></li>
+								<!--li class="has-dropdown">
 									<a href="blog.html">Blog</a>
 									<ul class="dropdown">
 										<li><a href="#">Web Design</a></li>
@@ -83,10 +84,10 @@
 										<li><a href="#">Branding</a></li>
 										<li><a href="#">API</a></li>
 									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-								<li class="btn-cta"><a href="#"><span>Login</span></a></li>
-								<li class="btn-cta"><a href="#"><span>Create a Course</span></a></li>
+								</li-->
+								<li><a href="#fh5co-contact" class="page-scroll">Contact</a></li>
+								<li class="btn-cta"><a href="{{ route('login') }}"><span>Login</span></a></li>
+								<li class="btn-cta"><a href="{{ route('register') }}"><span>Register</span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -99,68 +100,29 @@
 		<footer id="fh5co-footer" role="contentinfo">
 			<div class="container">
 				<div class="row row-pb-md">
-					<div class="col-md-3 fh5co-widget">
-						<h4>About Learning</h4>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci
-							architecto culpa amet.</p>
+					<div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 fh5co-widget">
+						<h4>About LVA</h4>
+						<p>LekkiVille Academy(LA) is the leader in qualitative teaching that provides private tuition classes at  our office and on a private level(home & Office Tuition) for students from Nursery through Primary,Secondary,Post-Secondary & University. We also provide classes for exams like JAMB,NECO,GCE and Post-JAMB. We prepare clients for foreign exams: SAT I & II, GRE, GMAT, IELTS, TOEFL and help clients secure admission in foreign Universities.</p>
 					</div>
+	
 					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-						<h4>Learning</h4>
+						<h4>Jobs</h4>
 						<ul class="fh5co-footer-links">
-							<li><a href="#">Course</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">Contact</a></li>
-							<li><a href="#">Terms</a></li>
-							<li><a href="#">Meetups</a></li>
+							<li><a href="{{ route('become-tutor') }}">Become a Tutor</a></li>
 						</ul>
 					</div>
-
-					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-						<h4>Learn &amp; Grow</h4>
-						<ul class="fh5co-footer-links">
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">Privacy</a></li>
-							<li><a href="#">Testimonials</a></li>
-							<li><a href="#">Handbook</a></li>
-							<li><a href="#">Held Desk</a></li>
-						</ul>
-					</div>
-
-					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-						<h4>Engage us</h4>
-						<ul class="fh5co-footer-links">
-							<li><a href="#">Marketing</a></li>
-							<li><a href="#">Visual Assistant</a></li>
-							<li><a href="#">System Analysis</a></li>
-							<li><a href="#">Advertise</a></li>
-						</ul>
-					</div>
-
-					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-						<h4>Legal</h4>
-						<ul class="fh5co-footer-links">
-							<li><a href="#">Find Designers</a></li>
-							<li><a href="#">Find Developers</a></li>
-							<li><a href="#">Teams</a></li>
-							<li><a href="#">Advertise</a></li>
-							<li><a href="#">API</a></li>
-						</ul>
-					</div>
-				</div>
 
 				<div class="row copyright">
 					<div class="col-md-12 text-center">
 						<p>
-							<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
-							<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a
-								 href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+							<small class="block">&copy; {{ \Carbon\Carbon::now()->format('Y') }} Lekki Ville Academy. All Rights Reserved.</small>
 						</p>
 						<p>
 							<ul class="fh5co-social-icons">
 								<li><a href="#"><i class="icon-twitter"></i></a></li>
 								<li><a href="#"><i class="icon-facebook"></i></a></li>
 								<li><a href="#"><i class="icon-linkedin"></i></a></li>
-								<li><a href="#"><i class="icon-dribbble"></i></a></li>
+								<li><a href="#"><i class="icon-instagram"></i></a></li>
 							</ul>
 						</p>
 					</div>
@@ -196,6 +158,8 @@
 	<!-- Magnific Popup -->
 	<script src="{{ asset('master/js/jquery.magnific-popup.min.js') }}"></script>
 	<script src="{{ asset('master/js/magnific-popup-options.js') }}"></script>
+	<!-- Smooth Scroll -->
+	<script src="{{ asset('master/js/SmoothScroll.js') }}"></script>
 	<!-- Main -->
 	<script src="{{ asset('master/js/main.js') }}"></script>
 		@stack('page-scripts')
