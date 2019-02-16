@@ -18,5 +18,16 @@ class UsersTableSeeder extends Seeder
         ]);
 
         $user->assignRole('admin');
+
+        $user2 = \App\User::create([
+            'name' => 'Ben Mike',
+            'email' => 'ben123@yahoo.com',
+            'operating_regions' => 'Lekki, Ajah, VGC',
+            'profile_image' => 'master/images/stock/tutor2.jpeg',
+            'password' => bcrypt('ben123'),
+ 
+        ]);
+
+        $user2->assignRole('tutor');
     }
 }

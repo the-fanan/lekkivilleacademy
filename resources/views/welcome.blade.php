@@ -12,7 +12,7 @@
                     <div class="display-tc animate-box" data-animate-effect="fadeIn">
                         <h1>The Art of Teaching is the Art of Assisting Discovery</h1>
                         <h2</h2>
-                        <p><a class="btn btn-primary btn-lg btn-learn" href="{{ route('get-tutor') }}">Get a Private Tutor</a> <a class="page-scroll btn btn-primary btn-lg btn-video" href="#fh5co-explore"><i class="icon-play"></i> Learn more</a></p>
+                        <p><a class="btn btn-primary btn-lg btn-learn" href="{{ route('select-tutor') }}">Get a Private Tutor</a> <a class="page-scroll btn btn-primary btn-lg btn-video" href="#fh5co-explore"><i class="icon-play"></i> Learn more</a></p>
                     </div>
                 </div>
             </div>

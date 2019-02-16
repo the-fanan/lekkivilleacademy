@@ -15,9 +15,11 @@ Route::group(['middleware' => 'optimizeHtml'], function(){
         return view('welcome');
     })->name('welcome');
 
-    Route::get('select-tutor', 'TutorController@showTutors')->name('get-tutor');
+    Route::get('select-tutor', 'TutorController@showTutors')->name('select-tutor');
 
     Route::get('become-tutor', 'TutorController@showTutors')->name('become-tutor');
+
+    Route::get('select-lesson/{tutor?}', 'TutorController@showSelectLesson')->name('select-lesson');
 });
 
 

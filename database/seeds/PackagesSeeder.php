@@ -162,7 +162,7 @@ class PackagesSeeder extends Seeder
                 'duration_amount' => '2'
             ],
             [
-                'name' => 'etiquetter',
+                'name' => 'etiquette',
                 'amount' => 20000,
                 'group' => 'english grammar, literature and writing',
                 'duration_type' => 'month',

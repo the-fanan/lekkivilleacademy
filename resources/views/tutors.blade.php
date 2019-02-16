@@ -26,31 +26,20 @@
 		</div>
 		<div class="row">
 
+			@foreach($tutors as $tutor)
 			<div class="col-lg-4 col-md-4">
 				<div class="fh5co-blog animate-box">
-					<a href="#"><img class="img-responsive" src="{{ asset('master/images/stock/tutor1.jpeg') }}" alt=""></a>
+					<a href="#"><img class="img-responsive" src="{{ asset($tutor->getImage()) }}" alt=""></a>
 					<div class="blog-text">
-						<h3><a href=""#>John Doe</a></h3>
-						<span class="posted_on">Tutor since Nov. 15th, 2018</span>
-						<p class="comment">Tutorials Done: <a class="pull-right" href="">21<i class="icon-speech-bubble"></i></a></p>
-						<p>Locations Available: Lekki, VGC, Ajah</p>
-						<a href="#" class="btn btn-primary">Request</a>
+						<h3><a href=""#>{{ $tutor->name }}</a></h3>
+						<span class="posted_on">Tutor since {{ $tutor->created_at->diffForHumans() }}</span>
+						<p class="comment">Tutorials Done: <a class="pull-right" href="">{{ $tutor->completedTutorailsAsTutor() }}<i class="icon-book"></i></a></p>
+						<p>Locations Available: {{ $tutor->operating_regions }}</p>
+						<a href="{{ route('select-lesson', ['tutor' => $request->id]) }}" class="btn btn-primary">Request</a>
 					</div> 
 				</div>
 			</div>
-
-			<div class="col-lg-4 col-md-4">
-				<div class="fh5co-blog animate-box">
-					<a href="#"><img class="img-responsive" src="{{ asset('master/images/stock/tutor2.jpeg') }}" alt=""></a>
-					<div class="blog-text">
-						<h3><a href=""#>Janet Doe</a></h3>
-						<span class="posted_on">Tutor since Nov. 15th, 2018</span>
-						<p class="comment">Tutorials Done: <a class="pull-right" href="">21<i class="icon-speech-bubble"></i></a></p>
-						<p>Locations Available: Lekki, VGC, Ajah</p>
-						<a href="#" class="btn btn-primary">Request</a>
-					</div> 
-				</div>
-			</div>
+			@endforeach
 		</div>
 	</div>
 </div>

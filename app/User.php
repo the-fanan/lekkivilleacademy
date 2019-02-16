@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
-
+use \Carbon\Carbon;
 class User extends Authenticatable
 {
     use Notifiable, HasRoles;
@@ -19,7 +19,12 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
-//whereHas("roles", function($q){ $q->where("name", "gun-controller"); })->count()
+    /* All the fields present on this array will be automatically accessible in your views with Carbon functions
+    *
+    * @var array
+    */
+   protected $dates = ['created_at', 'updated_at'];
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -40,5 +45,17 @@ class User extends Authenticatable
     public function requestsAsTutor()
     {
         return $this->hasMany(TutorRequest::class, 'tutor_id');
+    }
+    /**
+     * User functions
+     */
+    public function getImage()
+    {
+        return $this->profile_image ?? 'master/images/stock/tutor2.jpeg';
+    }
+
+    public function completedTutorailsAsTutor()
+    {
+        return $this->subscriptionsAsTutor()->where('end', '>', Carbon::now())->get()->count();
     }
 }

@@ -14,7 +14,11 @@ class Subscription extends Model
     protected $guarded = [
         'id'
      ];
-
+    /* All the fields present on this array will be automatically accessible in your views with Carbon functions
+    *
+    * @var array
+    */
+   protected $dates = ['created_at', 'updated_at', 'start', 'end'];
     /**
      * Model relationships
     */

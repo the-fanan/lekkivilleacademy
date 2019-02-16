@@ -74,7 +74,7 @@
 						<div class="col-xs-11 text-right menu-1">
 							<ul>
 								<li class="active"><a href="{{ route('welcome') }}">Home</a></li>
-								<li><a href="{{ route('get-tutor') }}">Tutors</a></li>
+								<li><a href="{{ route('select-tutor') }}">Tutors</a></li>
 								<li><a class="page-scroll" href="#fh5co-project">Pricing</a></li>
 								<!--li class="has-dropdown">
 									<a href="blog.html">Blog</a>
