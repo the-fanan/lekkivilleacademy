@@ -94,7 +94,7 @@
 				</div>
 			</div>
 		</nav>
-
+		
 		@yield('content')
 
 		<footer id="fh5co-footer" role="contentinfo">

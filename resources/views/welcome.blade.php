@@ -168,8 +168,8 @@
                 </a>
             </div>
             <div id="lva-shp" class="col-lg-6 col-md-6 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-                <a class="page-scroll" href="#lva-shp"><img src="{{ asset('master/images/stock/board.jpeg') }}" alt="Seconday , High School & Post-Secondary" class="img-responsive">
-                    <h3>Seconday , High School & Post-Secondary</h3>
+                <a class="page-scroll" href="#lva-shp"><img src="{{ asset('master/images/stock/board.jpeg') }}" alt="Secondary , High School & Post-Secondary" class="img-responsive">
+                    <h3>Secondary , High School & Post-Secondary</h3>
                     <span>View Course</span>
                 </a>
             </div>

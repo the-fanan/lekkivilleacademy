@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use \Carbon\Carbon;
 use App\User;
+use App\TutorApplication;
 
 class TutorController extends Controller
 {
@@ -19,5 +22,45 @@ class TutorController extends Controller
             return redirect(route('select-tutor'));
         }
         return view('select-lesson')->with('tutor', $request->tutor);
+    }
+
+    public function showBecomeTutor()
+    {
+        return view('become-tutor');
+    }
+
+    public function becomeTutor(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            "fullname" => "required|max:255|string",
+            "phone" => "required",
+            "email" => "required|email|unique:users,email|unique:tutor_applications,email",
+            "cv" => "required|mimetypes:application/pdf"
+        ]);
+
+        if ($validator->fails()) {
+            return redirect(route('become-tutor'))->with('error', implode(" ",$validator->messages()->all()))->withInput();
+        }
+        $textInputs = $request->only(["fullname","phone", "email"]);
+        $tutorApplication = new TutorApplication();
+        $tutorApplication->fill($textInputs);
+
+        $cv = $this->uploadFile($request->cv);
+        $tutorApplication->cv = $cv;
+
+        $tutorApplication->save();
+        
+        return redirect(route('become-tutor'))->with('success', 'Application sent!');
+    }
+
+     /**
+    * Handle file uploads
+    */
+    protected function uploadFile($resource, $prefix="")
+    {
+        $fileName = $prefix . time() . str_random(4);
+        $savePath = "uploads/" . $fileName;
+        $resource->storeAs("uploads/", $fileName, ['disk' => 'public']);
+        return $savePath;
     }
 }

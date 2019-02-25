@@ -35,7 +35,7 @@
 						<span class="posted_on">Tutor since {{ $tutor->created_at->diffForHumans() }}</span>
 						<p class="comment">Tutorials Done: <a class="pull-right" href="">{{ $tutor->completedTutorailsAsTutor() }}<i class="icon-book"></i></a></p>
 						<p>Locations Available: {{ $tutor->operating_regions }}</p>
-						<a href="{{ route('select-lesson', ['tutor' => $request->id]) }}" class="btn btn-primary">Request</a>
+						<a href="{{ route('select-lesson', ['tutor' => $tutor->id]) }}" class="btn btn-primary">Request</a>
 					</div> 
 				</div>
 			</div>

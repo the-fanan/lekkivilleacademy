@@ -15,10 +15,11 @@ class CreateTutorApplicationTable extends Migration
     {
         Schema::create('tutor_applications', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('fullname');
             $table->string('email')->unique();
             $table->string('cv');
-            $table->enum('status',['pending','approved','disapproved']);
+            $table->string('phone');
+            $table->enum('status',['pending','approved','disapproved'])->default('pending');
             $table->timestamps();
         });
     }
