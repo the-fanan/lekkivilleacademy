@@ -25,7 +25,7 @@
 			</div>
 		</div>
 		<div class="row">
-
+		@include('includes.alert')
 			@foreach($tutors as $tutor)
 			<div class="col-lg-4 col-md-4">
 				<div class="fh5co-blog animate-box">

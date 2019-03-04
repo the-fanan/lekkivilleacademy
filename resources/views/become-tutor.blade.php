@@ -30,7 +30,7 @@
                     <div class="row form-group">
                         <div class="col-md-6">
                             <!-- <label for="fname">First Name</label> -->
-                            <input type="text" id="fname" name="fullname" value="{{ old('fullname') }}" class="form-control" placeholder="Fullname">
+                            <input type="text" id="fname" name="name" value="{{ old('name') }}" class="form-control" placeholder="Fullname">
                         </div>
                         <div class="col-md-6">
                             <!-- <label for="lname">Last Name</label> -->

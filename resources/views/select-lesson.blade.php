@@ -16,4 +16,12 @@
 			</div>
 	</div>
 </header>
+
+@foreach($packages as $group => $groupPackages)
+Group Name: {{ $group }} </br>
+	 Packages: </br>
+	 @foreach($groupPackages as $package)
+	 		Package Name: {{ $package->name }} </br>
+	 @endforeach
+@endforeach
 @endsection
