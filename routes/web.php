@@ -21,7 +21,9 @@ Route::group(['middleware' => 'optimizeHtml'], function(){
 
     Route::post('become-tutor', 'TutorController@becomeTutor')->name('become-tutor.post');
 
-    Route::get('select-lesson/{tutor?}', 'TutorController@showSelectLesson')->name('select-lesson');
+    Route::get('select-lesson/{tutor?}', 'LessonController@showSelectLesson')->name('select-lesson');
+
+    Route::get('client-details/{package?}', 'UserController@showGetClientDetails')->name('client-details.show');
 });
 
 

@@ -26,7 +26,7 @@ class CreateTutorRequestsTable extends Migration
             $table->integer('package_id')->unsigned();
             $table->enum('extension_type',['day', 'week', 'month', 'year'])->nullable();
             $table->integer('extension_amount')->unsigned()->nullable();
-            $table->integer('number_of_children')->unsigned();
+            $table->integer('number_of_children')->unsigned()->nullable();
             $table->timestamps();
         });
     }

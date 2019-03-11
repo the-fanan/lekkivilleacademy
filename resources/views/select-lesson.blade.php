@@ -17,11 +17,40 @@
 	</div>
 </header>
 
-@foreach($packages as $group => $groupPackages)
-Group Name: {{ $group }} </br>
-	 Packages: </br>
-	 @foreach($groupPackages as $package)
-	 		Package Name: {{ $package->name }} </br>
-	 @endforeach
-@endforeach
+<div id="fh5co-pricing">
+		<div class="container">
+			@foreach($packages as $group => $groupPackages)
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center">
+								<div class="display-t">
+										<div class="display-tc animate-box" data-animate-effect="fadeIn">
+											<h3>{{ title_case($group) }}</h3>
+										</div>
+								</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="pricing">
+							@foreach($groupPackages as $package)
+							<div class="col-md-3 animate-box">
+								<div class="price-box">
+									<h2 class="pricing-plan">{{ title_case($package->name) }}</h2>
+									<div class="price"><sup class="currency">&#8358;</sup>{{ $package->amount }}<small>for {{ $package->duration_amount }} {{ str_plural($package->duration_type, $package->duration_amount) }}</small></div>
+									<ul class="classes">
+										<li>Home tutoring available</li>
+										<li class="color">Online tutoring available</li>
+									</ul>
+									<a href="{{ route('client-details.show', ['package' => $package->id]) }}" class="btn btn-select-plan btn-sm">Select Plan</a>
+								</div>
+							</div>
+							@endforeach
+						</div>
+					</div>
+				</div>
+			</div>
+			@endforeach
+		</div>
+</div>
 @endsection
