@@ -33,7 +33,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    /**
+     * Mutators
+     *
+     */
+    public function setEmailAttribute($value) {
+        $this->attributes['email'] = strtolower($value);
+    }
+    
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
     /**
      * Model rlationships
      */

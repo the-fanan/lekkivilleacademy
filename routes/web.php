@@ -24,6 +24,8 @@ Route::group(['middleware' => 'optimizeHtml'], function(){
     Route::get('select-lesson/{tutor?}', 'LessonController@showSelectLesson')->name('select-lesson');
 
     Route::get('client-details/{package?}', 'UserController@showGetClientDetails')->name('client-details.show');
+
+    Route::get('checkout', 'PaymentController@showCheckout')->name('checkout');
 });
 
 
