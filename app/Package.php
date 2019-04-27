@@ -14,4 +14,12 @@ class Package extends Model
     protected $guarded = [
         'id'
      ];
+
+      /**
+     * Model rlationships
+     */
+    public function lgaPrice()
+    {
+        return $this->hasMany(PackageLgaPrice::class);
+    }
 }

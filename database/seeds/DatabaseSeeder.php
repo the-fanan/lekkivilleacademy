@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PackagesSeeder::class);
         $this->call(StateAndLgaTableSeeder::class);
         $this->call(PackageLgaPricesTableSeeder::class);
+        $this->call(MetaTableSeeder::class);
     }
 }
