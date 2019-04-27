@@ -37,12 +37,12 @@
 							<div class="col-md-3 animate-box">
 								<div class="price-box">
 									<h2 class="pricing-plan">{{ title_case($package->name) }}</h2>
-									<div class="price"><sup class="currency">&#8358;</sup></small></div>
+									<!--div class="price"><sup class="currency">&#8358;</sup></small></div-->
 									<ul class="classes">
 										<li>Home tutoring available</li>
-										<li class="color">Online tutoring available</li>
+										<!--li class="color">Online tutoring available</li-->
 									</ul>
-									<a href="{{ route('client-details.show', ['package' => $package->id]) }}" class="btn btn-select-plan btn-sm">Select Plan</a>
+									<a href="{{ route('client-details.show', ['package' => $package->id]) }}" class="btn btn-select-plan btn-sm">Select Package</a>
 								</div>
 							</div>
 							@endforeach
