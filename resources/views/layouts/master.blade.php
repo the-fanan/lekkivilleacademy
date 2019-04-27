@@ -86,8 +86,16 @@
 									</ul>
 								</li-->
 								<li><a href="#fh5co-contact" class="page-scroll">Contact</a></li>
+								@if(!Auth::check())
 								<li class="btn-cta"><a href="{{ route('login') }}"><span>Login</span></a></li>
 								<li class="btn-cta"><a href="{{ route('register') }}"><span>Register</span></a></li>
+								@else
+								<li class="btn-cta"><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><span>Logout</span></a></li>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+										@csrf
+								</form>
+								@endif
 							</ul>
 						</div>
 					</div>
