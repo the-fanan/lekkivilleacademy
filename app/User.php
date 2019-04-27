@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'phone', 'address'
     ];
     /* All the fields present on this array will be automatically accessible in your views with Carbon functions
     *
