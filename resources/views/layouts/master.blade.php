@@ -91,7 +91,7 @@
 								<li class="btn-cta"><a href="{{ route('register') }}"><span>Register</span></a></li>
 								@else
 									@if(Auth::user()->hasRole('admin'))
-									<li class="btn-cta"><a href=""><span>Admin</span></a></li>
+									<li class="btn-cta"><a href="{{ route('admin.dashboard') }}"><span>Admin</span></a></li>
 									@endif
 								<li class="btn-cta"><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><span>Logout</span></a></li>

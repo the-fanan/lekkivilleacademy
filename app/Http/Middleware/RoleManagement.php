@@ -1,6 +1,6 @@
 <?php
 
-namespace rewem\Http\Middleware;
+namespace App\Http\Middleware;
 
 use Closure;
 
@@ -24,7 +24,7 @@ class RoleManagement
                 ],422);
             }
             if (empty($referer)) {
-                return redirect(route('dashboard'))->with('error','Unauthorized action, you don\'t have the permission to access that page.');
+                return back()->with('error','Unauthorized action, you don\'t have the permission to access that page.');
             }
             return back()->with('error','Unauthorized action! You can\'t access the page because you\'re not a ' . $value);
         }

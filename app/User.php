@@ -72,11 +72,19 @@ class User extends Authenticatable
      */
     public function getImage()
     {
-        return $this->profile_image ?? 'master/images/stock/tutor2.jpeg';
+        return $this->profile_image ?? 'master/images/stock/avatar.png';
     }
 
     public function completedTutorailsAsTutor()
     {
         return $this->subscriptionsAsTutor()->where('end', '>', Carbon::now())->get()->count();
+    }
+
+    /**
+     * Admin functions
+     */
+    public function totalUsers()
+    {
+        return self::all()->count();
     }
 }
