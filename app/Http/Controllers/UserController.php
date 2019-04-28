@@ -16,11 +16,11 @@ class UserController extends Controller
     //
     public function showGetClientDetails(Request $request) 
     {
+        session(['tutorial_package' => $request->package]);//store tutor data in session
         //if already authenticated then redirect to checkout
         if (Auth::check()) {
             return redirect(route('checkout'));
         }
-        session(['tutorial_package' => $request->package]);//store tutor data in session
         session(['register_redirect' => 'checkout']);
         return view('customer-details');
     }

@@ -26,8 +26,11 @@ Route::group(['middleware' => 'optimizeHtml'], function(){
     Route::get('client-details/{package?}', 'UserController@showGetClientDetails')->name('client-details.show');
 
     Route::get('checkout', 'PaymentController@showCheckout')->name('checkout');
+  
+    Route::post('get-state-lgas', 'LocationController@getStateLgas')->name('state.lgas');
 });
 
+Route::get('test', 'LocationController@getStateLgas');
 
 Auth::routes();
 
