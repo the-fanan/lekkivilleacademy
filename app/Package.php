@@ -57,4 +57,18 @@ class Package extends Model
             return false;
         }
     }
+
+    public function getPackagePricing($lgaId,$stateId)
+    {
+        if ($this->hasSpecialLgaPricing($lgaId)) {
+            $parray = json_decode($this->specialPricing);
+            return (array)$parray;
+        } else if ($this->hasSpecialStatePricing($stateId)) {
+            $parray = json_decode($this->specialPricing);
+            return (array)$parray;
+        } else {
+            $parray = json_decode($this->default_price_details);
+            return (array)$parray;
+        }
+    }
 }

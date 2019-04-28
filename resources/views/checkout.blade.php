@@ -80,6 +80,10 @@
 					<input type="hidden" name="metadata" value="{{ json_encode($array = ['package' => $package, 'tutor' => $tutor]) }}">
 					<input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}">
 					<input type="hidden" name="key" value="{{ config('paystack.secretKey') }}">
+					<input type="hidden" name="state" :value="currentState">
+					<input type="hidden" name="lga" :value="currentLga">
+					<input type="hidden" name="durationKind" :value="durationType">
+					<input type="hidden" name="durationValue" :value="durationUnit">
 					<div class="form-group">
 						<input type="submit" value="Checkout" class="btn btn-primary">
 					</div>

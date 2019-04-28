@@ -33,6 +33,7 @@ Route::group(['middleware' => 'optimizeHtml'], function(){
 });
 Route::get('checkout', 'PaymentController@showCheckout')->name('checkout');
 Route::post('payment', 'PaymentController@packagePaymentRedirectToGateway')->name('package.payment');
+Route::get('payment-callback', 'PaymentController@paymentCallback')->name('paystack.callback.route');
 Route::get('test', 'PackageController@getPackagePricing');
 
 Auth::routes();
