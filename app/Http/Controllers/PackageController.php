@@ -15,11 +15,13 @@ class PackageController extends Controller
 {
     public function getPackagePricing(Request $request)
     {
-        $package = Package::find($request->package);
+       $package = Package::find($request->package);
         if ($package->hasSpecialPricing($request->lga)) {
-            return $package->specialPricing;
+            $parray = json_decode($package->specialPricing);
+            return (array)$parray;
         } else {
-            return $package->default_price_details;
+            $parray = json_decode($package->default_price_details);
+            return (array)$parray;
         }
     }
 }

@@ -60,7 +60,7 @@
 							<!-- <label for="subject">Subject</label> -->
 							<input type="password" class="form-control" placeholder="Password" name="password">
 						</div>
-
+					Month: 	${ priceDetails.month }
 						<div class="col-md-6">
 							<!-- <label for="subject">Subject</label> -->
 							<input type="password"  class="form-control" placeholder="Confirm Password" name="password_confirmation">
@@ -79,6 +79,7 @@
 
 @push('page-scripts')
 <script type="text/javascript">
+/*	Notice! Use multiline comments because of minification */
 var vm = new Vue({
     delimiters: ['${', '}'],
     el: "#checkout-form",
@@ -113,6 +114,13 @@ var vm = new Vue({
         },
 				getPackagePrice: function () {
 					var cvm = this;
+					axios.post("{{ route('package.price') }}",{
+							package: cvm.package, lga: cvm.currentLga
+					}).then(function(response){
+						cvm.priceDetails = response.data;
+					}).catch(function(error){
+							console.log(error);
+					});
 				}
     }
 });
