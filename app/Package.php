@@ -29,7 +29,10 @@ class Package extends Model
         return $this->hasMany(PackageLgaPrice::class);
     }
 
-
+    public function statePrice()
+    {
+        return $this->hasMany(PackageStatePrice::class);
+    }
     /**
      * functions
      */
@@ -38,6 +41,17 @@ class Package extends Model
         $lgaPrice = $this->lgaPrice()->where('lga_id', $lgaId)->first();
         if ($lgaPrice != NULL) {
             $this->specialPricing = $lgaPrice->price_details;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function hasSpecialStatePricing($stateId)
+    {
+        $statePrice = $this->statePrice()->where('state_id', $stateId)->first();
+        if ($statePrice != NULL) {
+            $this->specialPricing = $statePrice->price_details;
             return true;
         } else {
             return false;

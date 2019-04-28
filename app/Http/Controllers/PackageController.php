@@ -19,6 +19,9 @@ class PackageController extends Controller
         if ($package->hasSpecialLgaPricing($request->lga)) {
             $parray = json_decode($package->specialPricing);
             return (array)$parray;
+        } else if ($package->hasSpecialStatePricing($request->state)) {
+            $parray = json_decode($package->specialPricing);
+            return (array)$parray;
         } else {
             $parray = json_decode($package->default_price_details);
             return (array)$parray;

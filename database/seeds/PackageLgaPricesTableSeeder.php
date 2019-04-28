@@ -13,7 +13,7 @@ class PackageLgaPricesTableSeeder extends Seeder
     public function run()
     {
         //
-        PackageLgaPrice::create(['package_id' => 1, 'lga_id' => 516, 'price_details' => "{'month':60000,'hour': 4000}"]);
+        PackageLgaPrice::create(['package_id' => 1, 'lga_id' => 516, 'price_details' => '{"month":60000,"hour": 4000}']);
 
     }
 }

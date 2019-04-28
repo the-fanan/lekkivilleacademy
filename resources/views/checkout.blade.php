@@ -42,7 +42,7 @@
 							</select>
 						</div>
 					</div>
-
+					Month: ${ priceDetails.month }
 					<div class="row form-group">
 						<div class="col-md-6">
 							<!-- <label for="subject">Subject</label> -->
@@ -114,7 +114,7 @@ var vm = new Vue({
 				getPackagePrice: function () {
 					var cvm = this;
 					axios.post("{{ route('package.price') }}",{
-							package: cvm.package, lga: cvm.currentLga
+							package: cvm.package, lga: cvm.currentLga, state: cvm.currentState
 					}).then(function(response){
 						cvm.priceDetails = response.data;
 					}).catch(function(error){
