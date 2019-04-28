@@ -25,7 +25,7 @@ class TutorController extends Controller
     public function becomeTutor(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            "name" => "required|max:255|string",
+            "fullname" => "required|max:255|string",
             "phone" => "required",
             "email" => "required|email|unique:users,email|unique:tutor_applications,email",
             "cv" => "required|mimetypes:application/pdf"
@@ -34,7 +34,7 @@ class TutorController extends Controller
         if ($validator->fails()) {
             return redirect(route('become-tutor'))->with('error', implode(" ",$validator->messages()->all()))->withInput();
         }
-        $textInputs = $request->only(["name","phone", "email"]);
+        $textInputs = $request->only(["fullname","phone", "email"]);
         $tutorApplication = new TutorApplication();
         $tutorApplication->fill($textInputs);
 
