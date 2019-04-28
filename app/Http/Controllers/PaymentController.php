@@ -9,6 +9,9 @@ use App\User;
 use App\TutorApplication;
 use App\Package;
 use App\State;
+use App\TutorRequest;
+use App\Payment;
+use App\Subscription;
 use Paystack;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
@@ -41,7 +44,8 @@ class PaymentController extends Controller
             'durationKind' => 'required|string',
             'durationValue' => 'required|numeric',
             'reference' => 'required',
-            'key' => 'required'
+            'key' => 'required',
+            'start_date' => 'required'
         ]);
         
         $packageId = session('tutorial_package');
@@ -62,6 +66,12 @@ class PaymentController extends Controller
 
     public function paymentCallback(Request $request)
     {
-
+        $paymentDetails = Paystack::getPaymentData();
+        //security check to prevent recompiling payment already made
+        $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+        if ($pageWasRefreshed ) {
+            return redirect(route('checkout'))->with('error','An error occurred');
+        } 
+        //get tutor, package, duration, duration unit and start daate
     }
 }

@@ -15,4 +15,17 @@ class TutorRequest extends Model
     protected $guarded = [
        'id'
     ];
+
+    /**
+     * Model relationships
+    */
+    public function tutor()
+    {
+        return $this->belongsTo(User::class, 'tutor_id');
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(User::class, 'client_id');
+    }
 }

@@ -64,6 +64,11 @@
 							<label for="subject">Duration Unit</label>
 							<input type="number"  class="form-control" v-model="durationUnit">
 						</div>
+
+						<div class="col-md-6">
+						<label for="subject">Start Date</label>
+							<input type="date"  class="form-control" v-model="startDate">
+						</div>
 					</div>
 					<div class="row form-group">
 						<div class="col-md-12">
@@ -77,13 +82,15 @@
 					<input type="hidden" name="email" value="{{ Auth::user()->email }}">
 					<!-- multiplication by 100 is done because paystack accepts cash in kobo-->
 					<input type="hidden" name="amount" :value="totalPrice * 100">
-					<input type="hidden" name="metadata" value="{{ json_encode($array = ['package' => $package, 'tutor' => $tutor]) }}">
+					<input type="hidden" name="tutor" value="{{ $tutor }}">
+					<input type="hidden" name="package" value="{{ $package }}">
 					<input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}">
 					<input type="hidden" name="key" value="{{ config('paystack.secretKey') }}">
 					<input type="hidden" name="state" :value="currentState">
 					<input type="hidden" name="lga" :value="currentLga">
 					<input type="hidden" name="durationKind" :value="durationType">
 					<input type="hidden" name="durationValue" :value="durationUnit">
+					<input type="hidden" name="start_date" :value="startDate">
 					<div class="form-group">
 						<input type="submit" value="Checkout" class="btn btn-primary">
 					</div>
@@ -113,7 +120,8 @@ var vm = new Vue({
 				tutor: {{ $tutor }},
 				durationType: "month",
 				durationUnit: 1,
-				totalPrice: 0
+				totalPrice: 0,
+				startDate: ""
     },
 		updated: function () {
 			this.$nextTick(function () {

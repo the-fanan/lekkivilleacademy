@@ -53,9 +53,19 @@ class User extends Authenticatable
         return $this->hasMany(Subscription::class, 'tutor_id');
     }
 
+    public function subscriptionsAsClient()
+    {
+        return $this->hasMany(Subscription::class, 'user_id');
+    }
+
     public function requestsAsTutor()
     {
         return $this->hasMany(TutorRequest::class, 'tutor_id');
+    }
+
+    public function requestAsClient()
+    {
+        return $this->hasMany(TutorRequest::class, 'client_id');
     }
     /**
      * User functions
