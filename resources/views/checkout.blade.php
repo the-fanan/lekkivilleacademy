@@ -28,7 +28,7 @@
 					<div class="row form-group">
 						<div class="col-md-6">
 
-							<label for="fname">Select State</label>
+							<label for="fname">State</label>
 							<select v-model="currentState" class="form-control">
 								<option value=""></option>
 								<option v-for="state in states" :value="state.id">${ state.name }</option>
@@ -60,7 +60,6 @@
 							<!-- <label for="subject">Subject</label> -->
 							<input type="password" class="form-control" placeholder="Password" name="password">
 						</div>
-					Month: 	${ priceDetails.month }
 						<div class="col-md-6">
 							<!-- <label for="subject">Subject</label> -->
 							<input type="password"  class="form-control" placeholder="Confirm Password" name="password_confirmation">

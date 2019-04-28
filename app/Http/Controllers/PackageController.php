@@ -16,7 +16,7 @@ class PackageController extends Controller
     public function getPackagePricing(Request $request)
     {
        $package = Package::find($request->package);
-        if ($package->hasSpecialPricing($request->lga)) {
+        if ($package->hasSpecialLgaPricing($request->lga)) {
             $parray = json_decode($package->specialPricing);
             return (array)$parray;
         } else {

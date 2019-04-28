@@ -29,10 +29,11 @@ class Package extends Model
         return $this->hasMany(PackageLgaPrice::class);
     }
 
+
     /**
      * functions
      */
-    public function hasSpecialPricing($lgaId)
+    public function hasSpecialLgaPricing($lgaId)
     {
         $lgaPrice = $this->lgaPrice()->where('lga_id', $lgaId)->first();
         if ($lgaPrice != NULL) {

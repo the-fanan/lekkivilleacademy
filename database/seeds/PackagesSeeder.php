@@ -17,37 +17,37 @@ class PackagesSeeder extends Seeder
             [
                 'name' => 'pre-school',
                 'group' => 'nursery and primary',
-                'default_price_details' => "{'month':40000,'hour': 2000}"
+                'default_price_details' => '{"month":35000,"hour": 1500}'
             ],
             [
                 'name' => 'nursery classes',
                 'group' => 'nursery and primary',
-                'default_price_details' => "{'month':40000,'hour': 2000}"
+                'default_price_details' => '{"month":35000,"hour": 1500}'
             ],
             [
                 'name' => 'primary / year 1 - 6',
                 'group' => 'nursery and primary',
-                'default_price_details' => "{'month':40000,'hour': 2000}"
+                'default_price_details' => '{"month":35000,"hour": 1500}'
             ],
             [
                 'name' => 'common entrance',
                 'group' => 'nursery and primary',
-                'default_price_details' => "{'month':40000,'hour': 2000}"
+                'default_price_details' => '{"month":35000,"hour": 1500}'
             ],
             [
                 'name' => 'jss 1 - 3',
                 'group' => 'secondary, high-school and post-secondary',
-                'default_price_details' => "{'month':65000,'hour': 4000}"
+                'default_price_details' => '{"month":40000,"hour": 2500}'
             ],
             [
                 'name' => 'sss 1 -3',
                 'group' => 'secondary, high-school and post-secondary',
-                'default_price_details' => "{'month':65000,'hour': 4000}"
+                'default_price_details' => '{"month":40000,"hour": 2500}'
             ],
             [
                 'name' => 'checkpoint',
                 'group' => 'secondary, high-school and post-secondary',
-                'default_price_details' => "{'month':65000,'hour': 4000}"
+                'default_price_details' => '{"month":40000,"hour": 2500}'
             ]
         ]);
         DB::commit();

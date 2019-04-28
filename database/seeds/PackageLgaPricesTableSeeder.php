@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\PackageLgaPrice;
+
 class PackageLgaPricesTableSeeder extends Seeder
 {
     /**
