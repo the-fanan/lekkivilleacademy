@@ -21,4 +21,9 @@ class PaymentController extends Controller
         $states = State::all(['id','name']);
         return view('checkout')->with('tutor', session('tutor'))->with('package', session('tutorial_package'))->with('states', $states);
     }
+
+    public function packagePaymentRedirectToGateway(Request $request)
+    {
+
+    }
 }

@@ -20,9 +20,9 @@
 <div id="fh5co-contact">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 animate-box">
+			<div class="col-md-6 animate-box" id="checkout-form">
 				<h3>Checkout Details</h3>
-				<form action="{{ route('register') }}" method="post" id="checkout-form">
+				<form action="{{ route('register') }}" v-on:submit.prevent method="post" >
 				@include('includes.alert')
 					@csrf
 					<div class="row form-group">
@@ -34,6 +34,7 @@
 								<option v-for="state in states" :value="state.id">${ state.name }</option>
 							</select>
 						</div>
+
 						<div class="col-md-6">
 							<label for="lname">LGA</label>
 							<select v-model="currentLga" class="form-control">
@@ -42,33 +43,48 @@
 							</select>
 						</div>
 					</div>
-					Month: ${ priceDetails.month }
+
 					<div class="row form-group">
 						<div class="col-md-6">
-							<!-- <label for="subject">Subject</label> -->
-							<input type="text" id="phone" class="form-control" placeholder="Phone Number" name="phone">
-						</div>
-
-						<div class="col-md-6">
-							<!-- <label for="subject">Subject</label> -->
-							<input type="text" id="address" class="form-control" placeholder="Address" name="address">
+						<h5>Rates</h5>
+							Monthly: &#8358;${ priceDetails.month }, Hourly: &#8358;${ priceDetails.hour }
 						</div>
 					</div>
 
 					<div class="row form-group">
 						<div class="col-md-6">
-							<!-- <label for="subject">Subject</label> -->
-							<input type="password" class="form-control" placeholder="Password" name="password">
+							<label for="lname">Duration Type</label>
+							<select v-model="durationType" class="form-control">
+								<option value="month">Month</option>
+								<option value="hour">Hour</option>
+							</select>
 						</div>
+
 						<div class="col-md-6">
-							<!-- <label for="subject">Subject</label> -->
-							<input type="password"  class="form-control" placeholder="Confirm Password" name="password_confirmation">
+							<label for="subject">Duration Unit</label>
+							<input type="number"  class="form-control" v-model="durationUnit">
 						</div>
-					</div> 
-					<div class="form-group">
-						<input type="submit" value="Register" class="btn btn-primary">
+					</div>
+					<div class="row form-group">
+						<div class="col-md-12">
+							<h2>Total: &#8358;${ totalPrice }</h2>
+						</div>
 					</div>
 				</form>		
+
+				<form action="{{ route('package.payment') }}" method="post">
+				@csrf
+					<input type="hidden" name="email" value="{{ Auth::user()->email }}">
+					<!-- multiplication by 100 is done because paystack accepts cash in kobo-->
+					<input type="hidden" name="amount" :value="totalPrice * 100">
+					<input type="hidden" name="metadata" value="{{ json_encode($array = ['package' => $package, 'tutor' => $tutor]) }}">
+					<input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}">
+					<input type="hidden" name="key" value="{{ config('paystack.secretKey') }}">
+					<div class="form-group">
+						<input type="submit" value="Checkout" class="btn btn-primary">
+					</div>
+				</form>
+
 			</div>
 		</div>
 		
@@ -88,15 +104,26 @@ var vm = new Vue({
 				currentState: null,
 				lgas: [],
 				currentLga: null,
-				priceDetails: {},
+				priceDetails: {"month": 0, "hour": 0},
 				package: {{ $package }},
-				tutor: {{ $tutor }}
+				tutor: {{ $tutor }},
+				durationType: "month",
+				durationUnit: 1,
+				totalPrice: 0
     },
+		updated: function () {
+			this.$nextTick(function () {
+				// Code that will run only after the
+				// entire view has been re-rendered
+				this.calculateTotalPrice();
+			})
+		},
 		watch: {
 			currentState: function () {
 				this.getLgas();
+				this.getPackagePrice();	
 			},
-			currentLga: function() {
+			currentLga: function () {
 				this.getPackagePrice();
 			}
 		},
@@ -120,9 +147,12 @@ var vm = new Vue({
 					}).catch(function(error){
 							console.log(error);
 					});
+				},
+				calculateTotalPrice: function () {
+					/*compare values and change*/
+					this.totalPrice =	this.priceDetails[this.durationType] * this.durationUnit;
 				}
     }
 });
-
 </script>
 @endpush
