@@ -22,4 +22,9 @@ class AdministratorController extends Controller
     {
         return view('admin.dashboard');
     }
+
+    public function showManageTutors(Request $request)
+    {
+        return view('admin.tutors');
+    }
 }

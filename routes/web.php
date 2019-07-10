@@ -35,7 +35,11 @@ Route::get('checkout', 'PaymentController@showCheckout')->name('checkout');
 Route::post('payment', 'PaymentController@packagePaymentRedirectToGateway')->name('package.payment');
 Route::get('payment-callback', 'PaymentController@paymentCallback')->name('paystack.callback.route');
 Route::get('test', 'PackageController@getPackagePricing');
-Route::get('admin/dashboard', 'AdministratorController@showDashboard')->name('admin.dashboard');
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('dashboard', 'AdministratorController@showDashboard')->name('admin.dashboard');
+    Route::get('tutors', 'AdministratorController@showManageTutors')->name('admin.tutors.show');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

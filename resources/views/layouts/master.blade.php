@@ -9,19 +9,19 @@
 	<title>{{ config('app.name', 'Lekki Ville Academy') }} - @yield('title')</title>
 	<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
+	<meta name="description" content="A web application to easily order home tutors online." />
+	<meta name="keywords" content="Mathematics Lesson, Nigeria, tutorials, science, learning, primary, secondary, pre-school, Lagos, Lekki, Rivers" />
 	<meta name="author" content="Fanan Dala" />
 
 	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="" />
-	<meta property="og:image" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:site_name" content="" />
-	<meta property="og:description" content="" />
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
+	<meta property="og:title" content="Lekki Ville Academy" />
+	<meta property="og:image" content="{{ asset('master/images/stock/student1.jpg') }}" />
+	<meta property="og:url" content="{{ url('/') }}" />
+	<meta property="og:site_name" content="Lekki Ville Academy" />
+	<meta property="og:description" content="Home Tutor ordering service" />
+	<meta name="twitter:title" content="Lekki Ville Academy" />
+	<meta name="twitter:image" content="{{ asset('master/images/stock/student1.jpg') }}" />
+	<meta name="twitter:url" content="{{ url('/') }}" />
 	<meta name="twitter:card" content="" />
 
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">

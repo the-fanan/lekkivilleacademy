@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Akiddie Admin | @yield('title')</title>
+    <title>LVA Admin | @yield('title')</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Bootstrap 3.3.2 -->
@@ -206,9 +206,16 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
+
             <li class="@yield('active-dashboard')">
               <a href="{{ route('admin.dashboard')}}">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
+              </a>
+            </li>
+
+            <li class="@yield('active-tutor')">
+              <a href="{{ route('admin.tutors.show')}}">
+                <i class="fa fa-user"></i> <span>Manage Tutors</span></i>
               </a>
             </li>
           </ul>

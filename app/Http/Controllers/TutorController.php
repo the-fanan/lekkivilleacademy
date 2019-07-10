@@ -51,7 +51,7 @@ class TutorController extends Controller
     */
     protected function uploadFile($resource, $prefix="")
     {
-        $fileName = $prefix . time() . str_random(4);
+        $fileName = $prefix . time() . str_random(4) . "pdf";
         $savePath = "uploads/" . $fileName;
         $resource->storeAs("uploads/", $fileName, ['disk' => 'public']);
         return $savePath;
