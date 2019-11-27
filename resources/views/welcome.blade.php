@@ -11,8 +11,13 @@
                 <div class="display-t">
                     <div class="display-tc animate-box" data-animate-effect="fadeIn">
                         <h1>The Art of Teaching is the Art of Assisting Discovery</h1>
+<<<<<<< HEAD
                         <h2> {{ date('Y-m-d H:i:s') }}  </h2>
                         <p><a class="btn btn-primary btn-lg btn-learn" href="{{ route('select-tutor') }}">Get a Private Tutor</a> <a class="page-scroll btn btn-primary btn-lg btn-video" href="#fh5co-explore"><i class="icon-play"></i> Learn more</a> <a class="btn btn-primary btn-lg btn-learn" href="{{ route('become-tutor') }}"> Become A Tutor</a></p>
+=======
+                        <h2</h2>
+                        <p><a class="btn btn-primary btn-lg btn-learn" href="{{ route('select-tutor') }}">Get a Private Tutor</a> <a class="page-scroll btn btn-primary btn-lg btn-video" href="#fh5co-explore"><i class="icon-play"></i> Learn more</a></p>
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
                     </div>
                 </div>
             </div>
@@ -20,7 +25,11 @@
     </div>
 </header>
 
+<<<<<<< HEAD
 <!--<div id="fh5co-counter" class="fh5co-counters">
+=======
+<div id="fh5co-counter" class="fh5co-counters">
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
     <div class="container">
         <div class="row">
             <div class="col-md-3 text-center animate-box">
@@ -37,7 +46,11 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 </div>-->
+=======
+</div>
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 
 <div id="fh5co-explore" class="fh5co-bg-section">
     <div class="container">
@@ -47,7 +60,11 @@
                 <p></p>
             </div>
         </div>
+<<<<<<< HEAD
     </div>
+=======
+    </div>		
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
     <div class="fh5co-explore fh5co-explore1">
         <div class="container">
             <div class="row">
@@ -85,8 +102,11 @@
                         <div>
                             <h4><i class="icon-laptop"></i>Flexibility</h4>
                             <p>We provide both private home tutor services and also tutoring through Skype. Our dedicated team of tutors are ready to deliver great learning content with whatever means you desire.</p>
+<<<<<<< HEAD
                             <h4><i class="icon-shield"></i>Security</h4>
                             <p>All our tutors go through a very tight security check. We ensure only responsible persons are sent to your homes.</p>
+=======
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
                         </div>
                     </div>
                 </div>
@@ -105,7 +125,11 @@
         </div>
 
         <div class="row bs-wizard animate-box" style="border-bottom:0;">
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
             <div class="col-xs-2 bs-wizard-step complete">
                 <div class="text-center bs-wizard-stepnum"><h4>Step 1</h4></div>
                 <div class="progress"><div class="progress-bar"></div></div>
@@ -152,6 +176,7 @@
     </div>
 </div>
 
+<<<<<<< HEAD
 <div id="fh5co-explore" class="fh5co-bg-section">
     <div class="container">
         <div class="row animate-box">
@@ -218,6 +243,8 @@
     </div>
 </div>
 
+=======
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 <div id="fh5co-project">
     <div class="container">
         <div class="row animate-box">
@@ -271,7 +298,11 @@
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.  </p>
                 </div>
             </div>
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
         </div-->
     </div>
 </div>
@@ -280,12 +311,20 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5 col-md-push-1 animate-box">
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
                 <div class="fh5co-contact-info">
                     <h3>Contact Information</h3>
                     <ul>
                         <li class="address">Lekki, <br> Lagos, Nigeria</li>
+<<<<<<< HEAD
                         <li class="phone"><a href="tel://1234567920">+2348063127827, +2348181627799</a></li>
+=======
+                        <li class="phone"><a href="tel://1234567920">+2348063127827,+2348181627799</a></li>
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
                         <li class="email"><a href="mailto:info@yoursite.com">info@lekkivilleacademy.com</a></li>
                     </ul>
                 </div>
@@ -329,9 +368,17 @@
                         <input type="submit" value="Send Message" class="btn btn-primary">
                     </div>
 
+<<<<<<< HEAD
                 </form>
+=======
+                </form>		
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
             </div>
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be

@@ -215,6 +215,7 @@
 
             <li class="@yield('active-tutor')">
               <a href="{{ route('admin.tutors.show')}}">
+<<<<<<< HEAD
                 <i class="fa fa-user"></i> <span>Applying Tutors</span></i>
               </a>
             </li>
@@ -230,6 +231,11 @@
                 <i class="fa fa-user"></i> <span>Manage Clients/Tutors</span></i>
               </a>
             </li>
+=======
+                <i class="fa fa-user"></i> <span>Manage Tutors</span></i>
+              </a>
+            </li>
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
           </ul>
         </section>
         <!-- /.sidebar -->

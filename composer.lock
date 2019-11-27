@@ -1,10 +1,17 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
+<<<<<<< HEAD
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "26c12401bc669294a0a8a5f060f8c4ed",
+=======
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "125074ad39c18a19b6e799621ac5fcd6",
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
     "packages": [
         {
             "name": "cloudinary/cloudinary_php",
@@ -711,6 +718,7 @@
             "time": "2018-12-04T20:46:45+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "hootlex/laravel-moderation",
             "version": "v1.1.0",
             "source": {
@@ -765,6 +773,8 @@
             "time": "2018-06-08T08:18:26+00:00"
         },
         {
+=======
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
             "name": "jakub-onderka/php-console-color",
             "version": "v0.2",
             "source": {

@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+<<<<<<< HEAD
     public function showUsers()
     {
         $users = User::whereHas('roles', function($q){ $q->where('name', 'tutor'); })->get();
@@ -21,6 +22,10 @@ class UserController extends Controller
 
     //
     public function showGetClientDetails(Request $request)
+=======
+    //
+    public function showGetClientDetails(Request $request) 
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
     {
         session(['tutorial_package' => $request->package]);//store tutor data in session
         //if already authenticated then redirect to checkout

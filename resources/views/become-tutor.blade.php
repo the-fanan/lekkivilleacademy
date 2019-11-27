@@ -53,21 +53,37 @@
                     </div>
 
                     <!--div class="row form-group">
+<<<<<<< HEAD
                         <div class="col-md-12">-->
+=======
+                        <div class="col-md-12">
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
                             <!-- <label for="message">Message</label> >
                             <textarea name="message" name="about" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about yourself"></textarea>
                         </div>
                     </div-->
 
+<<<<<<< HEAD
 
+=======
+									
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 
                     <div class="form-group">
                         <input type="submit" value="Apply" class="btn btn-primary">
                     </div>
 
+<<<<<<< HEAD
                 </form>
+=======
+                </form>		
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
             </div>
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be

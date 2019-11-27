@@ -55,7 +55,11 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12 text-right">
+<<<<<<< HEAD
 							<p class="num" style="font-size:18px" >+2348063127827, +2348055488397</p>
+=======
+							<p class="num">+2348063127827,+2348181627799</p>
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 							<ul class="fh5co-social">
 								<li><a href="#"><i class="icon-twitter"></i></a></li>
 								<li><a href="#"><i class="icon-facebook"></i></a></li>
@@ -74,7 +78,10 @@
 						<div class="col-xs-11 text-right menu-1">
 							<ul>
 								<li class="active"><a href="{{ route('welcome') }}">Home</a></li>
+<<<<<<< HEAD
 								<li><a href="{{ route('about') }}">About</a></li>
+=======
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 								<li><a href="{{ route('select-tutor') }}">Tutors</a></li>
 								<li><a class="page-scroll" href="#fh5co-project">Pricing</a></li>
 								<!--li class="has-dropdown">
@@ -90,15 +97,21 @@
 								@if(!Auth::check())
 								<li class="btn-cta"><a href="{{ route('login') }}"><span>Login</span></a></li>
 								<li class="btn-cta"><a href="{{ route('register') }}"><span>Register</span></a></li>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 								@else
 									@if(Auth::user()->hasRole('admin'))
 									<li class="btn-cta"><a href="{{ route('admin.dashboard') }}"><span>Admin</span></a></li>
 									@endif
+<<<<<<< HEAD
 
 									<li class="btn-cta"><a href="#"><span>{{ Auth::user()->name }}</span></a></li>
 
+=======
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 								<li class="btn-cta"><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><span>Logout</span></a></li>
 								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -111,7 +124,11 @@
 				</div>
 			</div>
 		</nav>
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 		@yield('content')
 
 		<footer id="fh5co-footer" role="contentinfo">
@@ -121,7 +138,11 @@
 						<h4>About LVA</h4>
 						<p>LekkiVille Academy(LA) is the leader in qualitative teaching that provides private tuition classes at  our office and on a private level(home & Office Tuition) for students from Nursery through Primary,Secondary,Post-Secondary & University. We also provide classes for exams like JAMB,NECO,GCE and Post-JAMB. We prepare clients for foreign exams: SAT I & II, GRE, GMAT, IELTS, TOEFL and help clients secure admission in foreign Universities.</p>
 					</div>
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
 						<h4>Jobs</h4>
 						<ul class="fh5co-footer-links">
@@ -182,4 +203,8 @@
 		@stack('page-scripts')
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be

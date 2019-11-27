@@ -33,4 +33,8 @@ class CreateTutorApplicationTable extends Migration
     {
         Schema::dropIfExists('tutor_application');
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be

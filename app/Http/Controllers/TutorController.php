@@ -43,7 +43,11 @@ class TutorController extends Controller
 
         $tutorApplication->save();
 
+<<<<<<< HEAD
         return redirect(route('become-tutor'))->with('success', 'Application sent!, We will get back to you');
+=======
+        return redirect(route('become-tutor'))->with('success', 'Application sent!');
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
     }
 
      /**

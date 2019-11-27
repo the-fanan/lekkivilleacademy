@@ -39,7 +39,11 @@
 									<h2 class="pricing-plan">{{ title_case($package->name) }}</h2>
 									<!--div class="price"><sup class="currency">&#8358;</sup></small></div-->
 									<ul class="classes">
+<<<<<<< HEAD
 										<li>Home tutoring available Now</li>
+=======
+										<li>Home tutoring available</li>
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 										<!--li class="color">Online tutoring available</li-->
 									</ul>
 									<a href="{{ route('client-details.show', ['package' => $package->id]) }}" class="btn btn-select-plan btn-sm">Select Package</a>
@@ -53,4 +57,8 @@
 			@endforeach
 		</div>
 </div>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be

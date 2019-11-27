@@ -49,7 +49,11 @@ class PaymentController extends Controller
             'key' => 'required',
             'start_date' => 'required'
         ]);
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
         $startDate = new Carbon($request->start_date);
         $today = Carbon::now();
         if (!$startDate->gt($today)) {
@@ -67,7 +71,11 @@ class PaymentController extends Controller
         if ($requiredPrice != $request->amount) {
             return back()->with('error','Error occurred, Please refresh the page and try again');
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
         $metadata = [
             "tutor" => $request->tutor,
             "package" => $request->package,
@@ -88,7 +96,11 @@ class PaymentController extends Controller
         $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
         if ($pageWasRefreshed ) {
             return redirect(route('select-tutor'))->with('success','Successful Payment');
+<<<<<<< HEAD
         }
+=======
+        } 
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
         //get tutor, package, duration, duration unit and start daate
         $tutorId = $paymentDetails['data']['metadata']['tutor'];
         $packageId = $paymentDetails['data']['metadata']['package'];
@@ -155,4 +167,8 @@ class PaymentController extends Controller
         ]);
         return redirect(route('select-tutor'))->with('success','Successful Payment');
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be

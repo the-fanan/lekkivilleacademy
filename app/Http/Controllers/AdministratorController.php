@@ -27,6 +27,7 @@ class AdministratorController extends Controller
     {
         return view('admin.tutors');
     }
+<<<<<<< HEAD
     public function showManageUsers(Request $request)
     {
         return view('admin.users');
@@ -35,4 +36,6 @@ class AdministratorController extends Controller
     {
         return request()->all();
     }
+=======
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 }

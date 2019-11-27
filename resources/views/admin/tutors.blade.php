@@ -29,22 +29,36 @@
 							<th>Fullname</th>
 							<th>Email</th>
 							<th>Phone</th>
+<<<<<<< HEAD
                             <th>CV</th>
                             <th>Status</th>
 							<th>Action</th>
 						</tr>
 
+=======
+							<th>CV</th>
+							<th>Action</th>
+						</tr>
+						
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 						<tr v-cloak v-for="(tutor, index) in tutorApplications">
 							<td>${ (index + 1) }</td>
 							<td>${ tutor.fullname }</td>
 							<td>${ tutor.email }</td>
 							<td>${ tutor.phone }</td>
+<<<<<<< HEAD
                             <td><a :href="'{{asset('/')}}' + tutor.cv">CV</a></td>
                             <td>${ tutor.status }</td>
                             <td><button class="btn btn-primary bg-blue" v-on:click="updateTutorRequest($event, tutor, index)">Accept</button></td>
 
                         </tr>
 
+=======
+							<td><a :href="'{{asset('/')}}' + tutor.cv">CV</a></td>
+							<td><button class="btn btn-primary bg-blue" v-on:click="updateTutorRequest($event, tutor, index)">Accept</button></td>
+						</tr>
+				
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 					</table>
 				</div>
 			</div>
@@ -68,11 +82,19 @@ var vm = new Vue({
 		},
 		watch: {
 			tutorSearch: function() {
+<<<<<<< HEAD
 
 			}
 		},
 		methods: {
 			closeModal: function() {
+=======
+				
+			}
+		},
+		methods: {
+			/*closeModal: function() {
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 				this.groupGuns[this.currentIndex] = this.currentGunRevert;
 				this.showModal = false;
 			},
@@ -82,6 +104,7 @@ var vm = new Vue({
 				this.currentGun = gun;
 				this.currentIndex = index;
 				this.currentGunRevert = Object.assign({},gun);
+<<<<<<< HEAD
 			},
 
 			updateTutorRequest: function (e, tutor) {
@@ -92,6 +115,15 @@ var vm = new Vue({
 				})
 					.then(response => {
                         console.log(response.data);
+=======
+			},*/
+			updateTutorRequest: function (e, tutor) {
+				e.preventDefault();
+				axios.post("", {
+					gun_details: this.currentGun
+				})
+					.then(response => {
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 						//receive response and create alert
 						switch (response.data.type) {
 							case 'error':
@@ -100,7 +132,11 @@ var vm = new Vue({
 							case 'success':
 								this.alert.success = response.data.message
 								//clear fields
+<<<<<<< HEAD
 
+=======
+								
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
 								break;
 						}
 					})
@@ -114,4 +150,8 @@ var vm = new Vue({
 		}
 	});
 </script>
+<<<<<<< HEAD
 @endpush
+=======
+@endpush
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be

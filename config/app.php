@@ -139,7 +139,10 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+<<<<<<< HEAD
         Hootlex\Moderation\ModerationServiceProvider::class,
+=======
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -229,4 +232,8 @@ return [
 
     ],
 
+<<<<<<< HEAD
 ];
+=======
+];
+>>>>>>> ef095f33a17bef2ab355906518afd81c352d88be
